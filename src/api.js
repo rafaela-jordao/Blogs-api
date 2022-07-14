@@ -1,4 +1,3 @@
-// iniciando o projeto API de Blogs
 const express = require('express');
 
 // ...
