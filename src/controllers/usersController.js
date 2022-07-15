@@ -12,6 +12,11 @@ const usersController = {
     res.status(201).json({ token });
   },
 
+  list: async (req, res) => {
+    const findAll = await usersService.list();
+    res.status(200).json(findAll);
+  },
+
 };
 
 module.exports = usersController;

@@ -11,9 +11,9 @@ const app = express();
 app.use(express.json());
 
 app.use('/login', authRouter);
-
+// a partir dessa linha o express utilizará o validateToken para todas as rotas abaixo.
+app.use(authController.validateToken); 
 app.use('/user', usersRouter);
-app.use('/user', authController.validateToken);
 
 app.use((err, _req, res, _next) => {
   const { name, message } = err;

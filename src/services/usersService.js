@@ -33,6 +33,12 @@ create: async ({ displayName, email, password, image }) => {
   return user.dataValues; 
 },
 
+list: async () => {
+  const users = await User.findAll();
+
+  return users;
+},
+
 };
 
 module.exports = usersService;
