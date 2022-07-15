@@ -3,12 +3,17 @@ const express = require('express');
 
 // ...
 const authRouter = require('./database/routers/authRouter');
+const usersRouter = require('./database/routers/usersRouter');
+const authController = require('./controllers/authController');
 
 const app = express();
 
 app.use(express.json());
 
 app.use('/login', authRouter);
+
+app.use('/user', usersRouter);
+app.use('/user', authController.validateToken);
 
 app.use((err, _req, res, _next) => {
   const { name, message } = err;
