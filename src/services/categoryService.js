@@ -23,6 +23,6 @@ const categoryService = {
     const categoryAll = await Category.findAll();
     return categoryAll;
   },
-}
+};
 
 module.exports = categoryService;

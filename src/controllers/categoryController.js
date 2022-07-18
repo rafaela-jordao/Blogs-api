@@ -14,6 +14,6 @@ const categoryController = {
     
     res.status(200).json(categoryAll);
   },
-}
+};
 
 module.exports = categoryController;
