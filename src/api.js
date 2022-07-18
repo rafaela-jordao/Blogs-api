@@ -4,6 +4,7 @@ const express = require('express');
 // ...
 const authRouter = require('./database/routers/authRouter');
 const usersRouter = require('./database/routers/usersRouter');
+const categoryRouter = require('./database/routers/categoryRouter');
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use('/login', authRouter);
 
 app.use('/user', usersRouter);
 app.use('/user/:id', usersRouter);
+
+app.use('/categories', categoryRouter);
 
 app.use((err, _req, res, _next) => {
   const { name, message } = err;
