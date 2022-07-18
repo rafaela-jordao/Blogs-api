@@ -40,6 +40,13 @@ list: async () => {
   return users;
 },
 
+getById: async (id) => {
+  const userId = await User.findByPk(id, {
+    attributes: { exclude: ['password'] },
+  });
+  return userId;
+},
+
 };
 
 module.exports = usersService;

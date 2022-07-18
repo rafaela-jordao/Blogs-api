@@ -12,6 +12,7 @@ app.use(express.json());
 app.use('/login', authRouter);
 
 app.use('/user', usersRouter);
+app.use('/user/:id', usersRouter);
 
 app.use((err, _req, res, _next) => {
   const { name, message } = err;
