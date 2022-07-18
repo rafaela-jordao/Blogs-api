@@ -14,9 +14,14 @@ const categoryService = {
     return value;
   },
 
-  create: async ( { name }) => {
+  create: async ({ name }) => {
     const category = await Category.create({ name });
     return category;
+  },
+
+  list: async () => {
+    const categoryAll = await Category.findAll();
+    return categoryAll;
   },
 }
 
