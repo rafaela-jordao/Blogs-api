@@ -1,4 +1,3 @@
-const { __esModule } = require('node-fetch');
 const Sequelize = require('sequelize');
 
 const createBlogPost = (Sequelize, DataTypes) => {
