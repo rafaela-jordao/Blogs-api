@@ -5,6 +5,7 @@ const express = require('express');
 const authRouter = require('./database/routers/authRouter');
 const usersRouter = require('./database/routers/usersRouter');
 const categoryRouter = require('./database/routers/categoryRouter');
+const postRouter = require('./database/routers/postRouter');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use('/user', usersRouter);
 app.use('/user/:id', usersRouter);
 
 app.use('/categories', categoryRouter);
+app.use('/post', postRouter);
 
 app.use((err, _req, res, _next) => {
   const { name, message } = err;
