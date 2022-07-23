@@ -6,6 +6,17 @@ const postController = {
 
     res.status(200).json(posts);
   },
+
+  getById: async (req, res) => {
+    const postId = await postService.getById(req.params.id);
+
+    if (!postId) {
+      const e = new Error('Post does not exist');
+      e.name = 'NotFoundError';
+      throw e;
+    }
+    res.status(200).json(postId);
+  },
   
 };
 
